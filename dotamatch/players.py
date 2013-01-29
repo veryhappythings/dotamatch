@@ -7,6 +7,8 @@ class PlayerSummaries(api.CachedApi):
         # This is the placeholder ID for private players
         if account_id == 4294967295:
             return None
+        if account_id == None:
+            return None
         # Convert the 32-bit ID into 64-bit
         result = self._get(steamids=int(account_id) + 76561197960265728)
         return Player(**result['response']['players'][0])

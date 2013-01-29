@@ -25,7 +25,7 @@ class Match(object):
 
         for player in self.players:
             player['player'] = parent.player_summaries.player(
-                player['account_id']
+                player.get('account_id')
             )
 
         # TODO convert to date time
