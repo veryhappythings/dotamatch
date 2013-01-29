@@ -1,5 +1,6 @@
 import datetime
 from dotamatch.api import Api
+from dotamatch.players import Player
 
 
 class MatchDetails(Api):
@@ -16,10 +17,10 @@ class Match(object):
         for key, value in kwargs.items():
             setattr(self, key, value)
 
-        players = []
-        for player in self.players:
-            players.append(Player(**player))
-        self.players = players
+        #players = []
+        #for player in self.players:
+        #    players.append(Player(**player))
+        #self.players = players
 
         # TODO convert to date time
         self.start_time = kwargs.get('start_time', datetime.datetime.utcnow())
@@ -31,7 +32,3 @@ class Match(object):
         return None
 
 
-class Player(object):
-    def __init__(self, **kwargs):
-        for key, value in kwargs.items():
-            setattr(self, key, value)

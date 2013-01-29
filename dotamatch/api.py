@@ -17,7 +17,6 @@ class Api(object):
 
         args = urllib.urlencode(kwargs)
         response = requests.get(type(self).url + args)
-        print response.status_code
         if response.status_code == 200:
             return response.json()
         else:
