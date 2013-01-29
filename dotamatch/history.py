@@ -27,4 +27,4 @@ class MatchHistory(Api):
             try:
                 yield self.match_api.match(match['match_id'])
             except ApiError:
-                yield Match(**match)
+                yield Match(self.match_api, **match)
