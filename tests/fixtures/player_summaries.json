@@ -1,0 +1,27 @@
+{
+	"response": {
+		"players": [
+			{
+				"steamid": "76561197960773619",
+				"communityvisibilitystate": 3,
+				"profilestate": 1,
+				"personaname": "Maccy",
+				"lastlogoff": 1359498129,
+				"commentpermission": 1,
+				"profileurl": "http://steamcommunity.com/id/puresock/",
+				"avatar": "http://media.steampowered.com/steamcommunity/public/images/avatars/9b/9bb74d23183628c6e5ce8e5ad76841225b6cd000.jpg",
+				"avatarmedium": "http://media.steampowered.com/steamcommunity/public/images/avatars/9b/9bb74d23183628c6e5ce8e5ad76841225b6cd000_medium.jpg",
+				"avatarfull": "http://media.steampowered.com/steamcommunity/public/images/avatars/9b/9bb74d23183628c6e5ce8e5ad76841225b6cd000_full.jpg",
+				"personastate": 0,
+				"realname": "Mac",
+				"primaryclanid": "103582791430730498",
+				"timecreated": 1063658413,
+				"loccountrycode": "GB",
+				"locstatecode": "K2",
+				"loccityid": 17087
+			}
+		]
+
+	}
+}
+

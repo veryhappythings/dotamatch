@@ -1,6 +1,6 @@
 import datetime
 from dotamatch.api import Api
-from dotamatch.players import Player, PlayerSummaries
+from dotamatch.players import PlayerSummaries
 
 
 class MatchDetails(Api):
