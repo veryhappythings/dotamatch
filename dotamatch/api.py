@@ -1,4 +1,8 @@
-import urllib
+try:
+    from urllib import urlencode
+except ImportError:
+    # Python 3
+    from urllib.parse import urlencode
 import requests
 
 
@@ -15,7 +19,7 @@ class Api(object):
     def _get(self, **kwargs):
         kwargs['key'] = self.key
 
-        args = urllib.urlencode(kwargs)
+        args = urlencode(kwargs)
         response = requests.get(type(self).url + args)
         if response.status_code == 200:
             return response.json()

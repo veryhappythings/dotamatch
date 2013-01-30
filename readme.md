@@ -18,5 +18,6 @@ Links
 * [Test status on Travis](https://travis-ci.org/veryhappythings/dotamatch)
 * [Cyborgmatt on game types and leaver statuses](http://dev.dota2.com/showthread.php?t=47115&page=57&p=462940&viewfull=1#post462940)
 
-"!https://travis-ci.org/veryhappythings/dotamatch.png!":https://travis-ci.org/veryhappythings/dotamatch
+[![Build Status](https://travis-ci.org/veryhappythings/dotamatch.png)](https://travis-ci.org/veryhappythings/dotamatch)
+
 
