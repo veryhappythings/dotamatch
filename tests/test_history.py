@@ -22,4 +22,4 @@ class TestMatchHistoryBySequenceNum(unittest.TestCase):
         api = history.MatchHistoryBySequenceNum('testkey')
         matches = api.matches()
 
-        self.assertEqual(7, matches.next().match_id)
+        self.assertEqual(7, next(matches).match_id)
