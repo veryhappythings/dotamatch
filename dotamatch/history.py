@@ -42,7 +42,10 @@ class MatchHistoryBySequenceNum(Api):
         """ Fetch complete match information with fewer calls. Useful if
         you're grabbing all matches - not useful for much else.
         Returns 100 matches at a time.
-        start_at_match_seq_num=seq_num
+
+        Available options are:
+        start_at_match_seq_num=<n>
+        matches_requested=<n>
         """
         result = self._get(**kwargs)
         for match in result['result']['matches']:
