@@ -28,3 +28,22 @@ class MatchHistory(Api):
                 yield self.match_api.match(match['match_id'])
             except ApiError:
                 yield Match(self.match_api, **match)
+
+
+class MatchHistoryBySequenceNum(Api):
+    url = "http://api.steampowered.com/IDOTA2Match_205790/GetMatchHistoryBySequenceNum/v0001/?"
+
+    def __init__(self, key):
+        super(MatchHistoryBySequenceNum, self).__init__(key)
+        self.match_api = MatchDetails(key)
+
+    def matches(self, **kwargs):
+
+        """ Fetch complete match information with fewer calls. Useful if
+        you're grabbing all matches - not useful for much else.
+        Returns 100 matches at a time.
+        start_at_match_seq_num=seq_num
+        """
+        result = self._get(**kwargs)
+        for match in result['result']['matches']:
+            yield Match(self.match_api, **match)
