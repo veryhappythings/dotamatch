@@ -38,7 +38,6 @@ class MatchHistoryBySequenceNum(Api):
         self.match_api = MatchDetails(key)
 
     def matches(self, **kwargs):
-
         """ Fetch complete match information with fewer calls. Useful if
         you're grabbing all matches - not useful for much else.
         Returns 100 matches at a time.
