@@ -36,5 +36,3 @@ class Match(object):
             if player['player'] and player['player'].personaname == player_name:
                 return player
         return None
-
-
