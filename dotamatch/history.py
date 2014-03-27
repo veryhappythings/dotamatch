@@ -23,11 +23,7 @@ class MatchHistory(Api):
         matches_requested=<n>       # Maximum is 25 matches (default is 25)
         """
         result = self._get(**kwargs)
-        for match in result['result']['matches']:
-            try:
-                yield self.match_api.match(match['match_id'])
-            except ApiError:
-                yield Match(self.match_api, **match)
+        return [Match(self.match_api, **m) for m in result['result']['matches']]
 
 
 class MatchHistoryBySequenceNum(Api):
