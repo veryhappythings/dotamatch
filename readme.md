@@ -43,7 +43,7 @@ So here, player is just a dictionary. You've pretty much got the JSON that Valve
 key = "Insert your Steam API key here!"
 history = MatchHistory(key)
 for match in history.matches(account_id=507891, matches_requested=10):
-    print match.id
+    print match.match_id
 ```
 
 Supported APIs
