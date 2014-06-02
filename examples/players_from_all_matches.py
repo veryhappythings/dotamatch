@@ -13,4 +13,4 @@ for match in history.matches(account_id=507891):
     for player in match.players:
         players.add(player['account_id'])
 
-print players
+print(players)

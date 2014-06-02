@@ -1,5 +1,6 @@
 from dotamatch import api
 
+
 class Teams(api.CachedApi):
     url = "https://api.steampowered.com/IDOTA2Match_570/GetTeamInfoByTeamID/v001/?"
 
@@ -21,7 +22,11 @@ class Team(object):
             setattr(self, key, value)
 
     def __repr__(self):
-        return unicode(self.name).encode('utf-8')
+        try:
+            return unicode(self.name).encode('utf-8')
+        except NameError:
+            # Python 3
+            return self.name
 
     def __unicode__(self):
         return self.name

@@ -16,5 +16,5 @@ for match in history.matches(skill=3, hero_id=tidehunter_id):
     match = details.match(match.match_id)
     for player in [p for p in match.players if p['hero_id'] == tidehunter_id]:
         for i in range(6):
-            print 'item_{0}'.format(i), player['item_{0}'.format(i)]
+            print('item_{0}'.format(i), player['item_{0}'.format(i)])
 

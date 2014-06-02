@@ -1,4 +1,4 @@
-from dotamatch.api import Api, ApiError
+from dotamatch.api import Api
 from dotamatch.matches import MatchDetails, Match
 
 

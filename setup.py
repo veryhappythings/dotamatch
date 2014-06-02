@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 
-VERSION="0.1"
+VERSION = "0.1"
 
 setup(
     name="dotamatch",
@@ -11,22 +11,21 @@ setup(
     author_email="mac@veryhappythings.co.uk",
     url="http://www.veryhappythings.co.uk",
 
-    install_requires = [
+    install_requires=[
         "requests",
     ],
-    entry_points = {
+    entry_points={
     },
     zip_safe=False,
     include_package_data=True,
     packages=find_packages(),
-    package_data = {
+    package_data={
     },
-    data_files = [
+    data_files=[
     ],
 
-    keywords = [
+    keywords=[
     ],
-    classifiers = [
+    classifiers=[
     ],
 )
-

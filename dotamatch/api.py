@@ -1,8 +1,3 @@
-try:
-    from urllib import urlencode
-except ImportError:
-    # Python 3
-    from urllib.parse import urlencode
 import time
 import datetime
 import requests
@@ -28,16 +23,16 @@ class Api(object):
 
         kwargs['key'] = self.key
 
-        args = urlencode(kwargs)
-        response = requests.get(type(self).url + args)
+        response = requests.get(type(self).url, params=kwargs)
         if response.status_code == 200:
             return response.json()
         else:
-            raise ApiError(str(response.status_code) + ': ' + type(self).url + args)
+            raise ApiError(str(response.status_code) + ': ' + response.url)
 
 
 class CachedApi(Api):
     cache = {}
+
     def _get(self, **kwargs):
         key = hash(tuple(kwargs.items()))
         if key not in type(self).cache:

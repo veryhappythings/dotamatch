@@ -1,5 +1,6 @@
 from dotamatch import api
 
+
 class PlayerSummaries(api.CachedApi):
     url = "https://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?"
 
@@ -7,7 +8,7 @@ class PlayerSummaries(api.CachedApi):
         # This is the placeholder ID for private players
         if account_id == 4294967295:
             return None
-        if account_id == None:
+        if account_id is None:
             return None
         # Convert the 32-bit ID into 64-bit
         result = self._get(steamids=int(account_id) + 76561197960265728)
@@ -20,7 +21,11 @@ class Player(object):
             setattr(self, key, value)
 
     def __repr__(self):
-        return unicode(self.personaname).encode('utf-8')
+        try:
+            return unicode(self.personaname).encode('utf-8')
+        except NameError:
+            # Python 3
+            return self.personaname
 
     def __unicode__(self):
         return self.personaname
