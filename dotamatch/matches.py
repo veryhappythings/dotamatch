@@ -20,8 +20,7 @@ class Match(object):
         for key, value in kwargs.items():
             setattr(self, key, value)
 
-        # TODO convert to date time
-        self.start_time = kwargs.get('start_time', datetime.datetime.utcnow())
+        self.start_time = datetime.datetime.utcfromtimestamp(kwargs['start_time'])
 
     def player(self, account_id):
         for player in self.players:
