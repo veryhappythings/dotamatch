@@ -23,7 +23,7 @@ class Api(object):
 
         kwargs['key'] = self.key
 
-        response = requests.get(type(self).url, params=kwargs)
+        response = requests.get(type(self).url, params=kwargs, headers={'Accept-Encoding': 'gzip'})
         if response.status_code == 200:
             return response.json()
         else:
