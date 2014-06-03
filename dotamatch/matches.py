@@ -1,4 +1,4 @@
-import datetime
+from datetime import datetime
 from dotamatch.api import Api
 
 
@@ -20,7 +20,10 @@ class Match(object):
         for key, value in kwargs.items():
             setattr(self, key, value)
 
-        self.start_time = datetime.datetime.utcfromtimestamp(kwargs['start_time'])
+        if hasattr(self, 'start_time'):
+            self.start_time = datetime.utcfromtimestamp(self.start_time)
+        else:
+            self.start_time = datetime.utcnow()
 
     def player(self, account_id):
         for player in self.players:
