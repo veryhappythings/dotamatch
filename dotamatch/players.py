@@ -26,7 +26,7 @@ class PlayerSummaries(api.CachedApi):
                 ids.append(id_to_64(account_id))
         result = self._get(steamids=','.join(ids))
         for player in result['response']['players']:
-            yield Player(player)
+            yield Player(**player)
 
 
 class ResolveVanityUrl(api.CachedApi):
