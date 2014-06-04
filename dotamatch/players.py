@@ -4,6 +4,16 @@ from dotamatch import api
 DIFF_64 = 76561197960265728
 
 
+def id_to_64(account_id):
+    """Safely converts id to 64-bit. If the id is already 64-bit, it will not be converted."""
+    return account_id if account_id >= DIFF_64 else account_id + DIFF_64
+
+
+def id_to_32(account_id):
+    """Safely converts id to 32-bit. If the id is already 32-bit, it will not be converted."""
+    return account_id if account_id < DIFF_64 else account_id - DIFF_64
+
+
 class PlayerSummaries(api.CachedApi):
     url = "https://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?"
 
@@ -13,7 +23,7 @@ class PlayerSummaries(api.CachedApi):
             # 4294967295 is the placeholder ID for private players
             if account_id is not None and account_id != 4294967295:
                 # Converts ID to 64-bit if it is not already
-                ids.append(account_id if account_id >= DIFF_64 else account_id + DIFF_64)
+                ids.append(id_to_64(account_id))
         result = self._get(steamids=','.join(ids))
         return (Player(player) for player in result['response']['players'])
 
@@ -23,8 +33,8 @@ class ResolveVanityUrl(api.CachedApi):
 
     def id(self, vanity_name):
         result = self._get(vanityurl=vanity_name)
-        if result['success'] == 1:
-            return result['steamid']
+        if result['response']['success'] == 1:
+            return int(result['response']['steamid'])
         return None
 
 
