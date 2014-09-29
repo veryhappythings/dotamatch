@@ -67,4 +67,4 @@ Links
 * [Cyborgmatt on game types and leaver statuses](http://dev.dota2.com/showthread.php?t=47115&page=57&p=462940&viewfull=1#post462940)
 * [MatchHistoryBySequenceNum information](http://dev.dota2.com/showthread.php?t=71679&p=464233&viewfull=1#post464233)
 
-[![Build Status](https://travis-ci.org/Vectorious/dotamatch.svg)](https://travis-ci.org/Vectorious/dotamatch)
+[![Build Status](https://travis-ci.org/veryhappythings/dotamatch.png)](https://travis-ci.org/veryhappythings/dotamatch)
