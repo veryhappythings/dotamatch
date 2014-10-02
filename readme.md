@@ -49,12 +49,13 @@ for match in history.matches(account_id=507891, matches_requested=10):
 Supported APIs
 --------------
 
-* GetMatchHistory
-* GetMatchDetails
-* GetHeroes
-* GetPlayerSummaries
 * EconomySchema
+* GetHeroes
+* GetLeagueListing
+* GetMatchDetails
+* GetMatchHistory
 * GetMatchHistoryBySequenceNum
+* GetPlayerSummaries
 * GetTeamInfoByTeamId
 
 
@@ -68,3 +69,12 @@ Links
 * [MatchHistoryBySequenceNum information](http://dev.dota2.com/showthread.php?t=71679&p=464233&viewfull=1#post464233)
 
 [![Build Status](https://travis-ci.org/veryhappythings/dotamatch.png)](https://travis-ci.org/veryhappythings/dotamatch)
+
+
+Contributors
+------------
+
+* [Brandon King](https://github.com/Vectorious)
+* James Lucas
+* [Mac Chapman](https://github.com/veryhappythings)
+* [Marcus Cobden](https://github.com/leth)
